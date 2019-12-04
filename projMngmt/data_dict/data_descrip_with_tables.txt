@@ -1,0 +1,104 @@
+﻿Original Data
+* Game ID;
+   * Hopefully** unique identifier for each game on the site 
+* Rated (T/F);
+   * Boolean based on whether game outcome impacts a player’s rating:
+      * TRUE; x pts plus or minus player’s rating 
+      * FALSE; 0 pts plus or minus player’s rating 
+* Start Time or created_at;
+   * Some value in the billions indicating start of game 
+* End Time or last_move_at;
+   * Some value in the billions indicating the end of the game 
+* Number of Turns;
+   * Count of individual player turns in each game
+* Game Status;
+   * 4 options for the end of a game; 
+      * mate, resign, outoftime, draw
+* Winner;
+   * 3 options for the winner; 
+      * Black, white, draw
+* Time Increment;
+   * The time format of the game
+      * [time in minutes] + [seconds added to the clock after each move]
+      * E.g. 30 +  0, 15 + 15 
+* White Player ID; 
+   * A player’s username 
+* White Player Rating;
+   * A player’s rating (NOTE rating is a point value not a ranking)
+* Black Player ID;
+   * A player’s username
+* Black Player Rating;
+   * A player’s rating (NOTE rating is a point value not a ranking)
+* All Moves in Standard Chess Notation;
+   * Sequence of moves in standard chess notation.
+   * NOTE: count(moves) = # of turns 
+* Opening Eco (Standardised Code for any given opening, list here);
+   * Std. chess notation for opening move
+* Opening Name;
+   * Actual name of opening move 
+   * E.g. sicilian defence 
+* Opening Ply (Number of moves in the opening phase); 
+   * The number of moves in the opening phase of the game for a given opening 
+   * This is based on the number of moves in the opening sequence (i.e. different
+	 sequences have their own number of moves that are inside of the opening theory). 
+
+Game_info
+* Game ID (primary key)
+   * varchar(8)
+* Rated (T/F);
+   * Bool
+* Start Time;
+   * real
+* End Time;
+   * real
+* Number of Turns;
+   * int
+* Game Status;
+   * varchar(9)
+* Winner;
+   * white/black
+   * varchar(5)
+* Increment count
+   * char
+
+White_player
+
+* Game ID (primary key)
+* White Player ID;
+   * varchar(15)
+* White Player Rating;
+   * int
+
+Black_player
+
+* Game ID (primary key)
+* Black Player ID;
+   * varchar(15)
+* Black Player Rating;
+   * int
+
+
+Game_moves
+
+
+Raw data columns:
+* Game ID (primary key)
+* All Moves in Standard Chess Notation
+   * List of moves, will flatten 
+* Opening Eco (Standardised Code for any given opening, list here): 
+   * varchar
+* Opening Name
+   * varchar
+* Opening Ply (Number of moves in the opening phase)
+   * Int
+Actual columns:
+*  Primary key: Game ID & # of moves
+* Game ID
+   * varchar(8) 
+      * Note this could be wrong but psql will tell us 
+* # of move
+   * Int
+* Move 
+   * varchar(5)
+   * NOTE in base table the datatype is text for the full sequence of moves 
+

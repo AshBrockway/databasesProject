@@ -1,0 +1,11 @@
+4 Decemeber 2019 
+
+Rosa & Ashley: 
+1. What is a move? -> a single player's move written in standard chess notation
+2. What is a turn? -> one player making a move 
+3. write data descriptions 
+4. plan normalized tables (2nd Normal Forms) 
+5. Make git repo 
+	a. write readme
+6. Create raw data table to work with 
+7. create normalized tables 

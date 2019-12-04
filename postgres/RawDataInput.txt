@@ -1,0 +1,25 @@
+﻿Create Base Working Table: 
+
+Create table rawdata(
+id varchar(8),
+rated bool,
+created_at real,
+last_move_at real,
+turns int,
+victory_status varchar(9),
+winner varchar(5),
+increment_code varchar(20),
+white_id varchar(30),
+white_rating int,
+black_id varchar(30),
+black_rating int,
+moves text,
+opening_eco varchar(10),
+opening_name text,
+opening_ply int
+)
+
+
+Command to import the data into postgres:
+ 
+\copy rawdata from /home/rgradilla/games.csv CSV HEADER
