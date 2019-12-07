@@ -8,8 +8,15 @@ app.config['UPLOAD_FOLDER'] = TEST_FOLDER
 app.debug = True
 
 @app.route('/', methods=['GET'])
-def Home():
-	return """<h1> You're Home!  Placeholder for a site index later </h1>"""    
+def index():
+	return render_template('index.html')
+
+@app.route('/cool_form', methods=['GET','POST'])
+def cool_form():
+	if request.method == 'POST':
+		return redirect(url_for('index'))
+	return render_template('cool_form.html')
+
 @app.route('/testPNG')
 def showTestImage():
 	full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'test1.png')
