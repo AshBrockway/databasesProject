@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request
 import os
 
-TEST_FOLDER = os.path.join('static', '')
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = TEST_FOLDER
 app.debug = True
 
 @app.route('/', methods=['GET'])
@@ -15,5 +13,8 @@ def index():
 def violin():
 	return render_template('violin.html')
 
+@app.route('/moves')
+def moves():
+        return render_template('moves.html')
 if __name__ == "__main__":
     app.run()
