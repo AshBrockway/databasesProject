@@ -41,24 +41,27 @@
 </head>
 <body>
 
-<h2>DUMMY TEXT1</h2>
-<p>Move the mouse over the button to open the dropdown menu.</p>
+<div align="center"; style="z-index: 100"; position:fixed> 
+<h2>DB Final Project </h2>
+<p>Select a plot that you're interested in!</p>
 
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="{{ url_for('static', filename='test1.png') }}">TEST IMAGE 1</a>
-    <a href="{{ url_for('moves') }}">Moves Plot</a>
-    <a href="{{ url_for('violin') }}">Violin Plot</a>
+
+<div class="dropdown"; position:fixed>
+  <button class="dropbtn">Select a Plot</button>
+  <div class="dropdown-content"; position:fixed>
+   <!-- <a href="{{ url_for('static', filename='test1.png') }}">TEST IMAGE 1</a>-->
+    <a href="{{ url_for('moves') }}">Player Rating Difference vs. Moves in a Game </a>
+    <a href="{{ url_for('violin') }}">Player Rating Influence on Time Controls</a>
+    <a href="{{ url_for('heat') }}">Player Rating Difference vs. Victory Status</a>
+    <a href="{{ url_for('movevtime') }}">Number of Moves vs. Time Controls</a>
   </div>
+<p>   </p>
 </div>
-
+</div>
 
 <div>
-<iframe name="moves" src="moves" style="position: absolute; width: 100%; height: 100%; border: none"></iframe>
+<iframe  src={{url_for('static', filename='chessStock.jpeg')}} style="position: absolute; width: 100%; height: 100%; border: none"></iframe>
 </div>
-
-
 
 </body>
 </html>
